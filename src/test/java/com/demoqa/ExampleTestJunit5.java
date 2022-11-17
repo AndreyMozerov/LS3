@@ -15,8 +15,8 @@ public class ExampleTestJunit5 {
     }
 
     @AfterAll
-     static void tearDown("B"){
-        System.out.println();
+     static void tearDown(){
+        System.out.println("D");
     }
 
     @Test
