@@ -15,7 +15,7 @@ public class ExampleTestJunit5 {
     }
 
     @AfterAll
-    static void configure("B"){
+     static void tearDown("B"){
         System.out.println();
     }
 
