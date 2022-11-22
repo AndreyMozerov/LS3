@@ -14,7 +14,7 @@ public class TestForm {
     @BeforeAll
     static void beforeAll(){
         Configuration.holdBrowserOpen = true;
-        Configuration.browser="firefox";
+        //Configuration.browser="firefox";
         Configuration.baseUrl = "http://demoqa.com";
         Configuration.browserSize = "1920x1080";
         // Configuration.timeout= 10000;
