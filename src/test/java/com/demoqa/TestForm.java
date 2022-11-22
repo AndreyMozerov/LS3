@@ -13,13 +13,14 @@ public class TestForm {
 
     @BeforeAll
     static void beforeAll(){
-       Configuration.holdBrowserOpen = true;
+        Configuration.holdBrowserOpen = true;
+        //Configuration.browser="firefox";
+        Configuration.baseUrl = "http://demoqa.com";
+        Configuration.browserSize = "1920x1080";
+        // Configuration.timeout= 10000;
 
-       Configuration.baseUrl = "https://demoqa.com";
-       // Configuration.timeout= 10000;
-       // Configuration.browser="chrome";
 
-       Configuration.browserSize = "1910*1080";
+
 
     }
 
@@ -27,9 +28,11 @@ public class TestForm {
     void fillFormTest() {
         String userName="Andrey";
         open("/text-box");
+
+
         $("#userName").setValue(userName);
         $("#userEmail").setValue("Andrey@mail.ru");
-        $("#currrentAddress").setValue("Moscow");
+        $("#currentAddress").setValue("Moscow");
         $("#permanentAddress").setValue("Vladimirskaia");
         $("#submit").click();
 
