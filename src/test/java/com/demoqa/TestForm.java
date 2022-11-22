@@ -40,6 +40,8 @@ public class TestForm {
         $("#output").shouldBe(Condition.visible);
         $("#output #name").shouldHave(text(userName));
         $("#output #email").shouldHave(text("Andrey@mail.ru"));
+        $("#currentAddress").shouldHave(text("Moscow"));
+        $("#permanentAddress").shouldHave(text("Vladimirskaia"));
 
     }
 }
