@@ -4,21 +4,21 @@ import org.junit.jupiter.api.*;
 
 public class ExampleTestJunit5 {
 
-    @BeforeAll
+   // @BeforeAll
     static void configure(){
         System.out.println("H");
     }
 
-    @AfterAll
+  //  @AfterAll
      static void tearDown(){
         System.out.println("D");
     }
 
-    @BeforeEach
+  //  @BeforeEach
     void beforeTest(){
         System.out.println("c");
     }
-    @AfterEach
+ //   @AfterEach
     void afterTest(){
         System.out.println("v");
     }
