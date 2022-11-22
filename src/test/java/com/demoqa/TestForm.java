@@ -14,7 +14,7 @@ public class TestForm {
     @BeforeAll
     static void beforeAll(){
         Configuration.holdBrowserOpen = true;
-        //Configuration.browser="firefox";
+        Configuration.browser="firefox";
         Configuration.baseUrl = "http://demoqa.com";
         Configuration.browserSize = "1920x1080";
         // Configuration.timeout= 10000;
@@ -40,8 +40,8 @@ public class TestForm {
         $("#output").shouldBe(Condition.visible);
         $("#output #name").shouldHave(text(userName));
         $("#output #email").shouldHave(text("Andrey@mail.ru"));
-        $("#currentAddress").shouldHave(text("Moscow"));
-        $("#permanentAddress").shouldHave(text("Vladimirskaia"));
+        $("#output #currentAddress").shouldHave(text("Moscow"));
+        $("#output #permanentAddress").shouldHave(text("Vladimirskaia"));
 
     }
 }
