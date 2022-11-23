@@ -9,30 +9,36 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class TestForm {
+public class RegistrationTest {
 
     @BeforeAll
     static void beforeAll(){
-        Configuration.holdBrowserOpen = true;
-        //Configuration.browser="firefox";
         Configuration.baseUrl = "http://demoqa.com";
+        Configuration.holdBrowserOpen = true;
         Configuration.browserSize = "1920x1080";
-        // Configuration.timeout= 10000;
-    }
+        }
 
     @Test
     void fillFormTest() {
-        String userName="Andrey";
-        open("/text-box");
-        $("#userName").setValue(userName);
+        String firstName="Andrey";
+        String lastName="Andrey";
+        open("/automation-practice-form");
+        $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
+        $("#firstName").setValue(firstName);
+        $("#lastName").setValue(lastName);
+        $("#userNumber").setValue("123456789");
         $("#userEmail").setValue("Andrey@mail.ru");
         $("#currentAddress").setValue("Moscow");
-        $("#permanentAddress").setValue("Vladimirskaia");
+       // $("#permanentAddress").setValue("Vladimirskaia");
+        $("#gender-radio-1").parent().click();
+
+
+
         $("#submit").click();
 
 
         $("#output").shouldBe(Condition.visible);
-        $("#output #name").shouldHave(text(userName));
+        $("#output #name").shouldHave(text(firstName));
         $("#output #email").shouldHave(text("Andrey@mail.ru"));
         $("#output #currentAddress").shouldHave(text("Moscow"));
         $("#output #permanentAddress").shouldHave(text("Vladimirskaia"));
