@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -30,7 +31,8 @@ public class RegistrationTest {
         $("#userEmail").setValue("Andrey@mail.ru");
         $("#currentAddress").setValue("Moscow");
        // $("#permanentAddress").setValue("Vladimirskaia");
-        $("#gender-radio-1").parent().click();
+       // $("#gender-radio-1").parent().click();
+        $("#genterWrapper").$(byText("Other")).click();
 
 
 
