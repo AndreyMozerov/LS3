@@ -33,6 +33,10 @@ public class RegistrationTest {
        // $("#permanentAddress").setValue("Vladimirskaia");
        // $("#gender-radio-1").parent().click();
         $("#genterWrapper").$(byText("Other")).click();
+        $("#dateOfBirthInput").click();
+        $(".react-datepicker__month-select").selectOption("August");
+        $(".react-datepicker__year-select").selectOption("1983");
+        $(".react-datepicker__day--008").click();
 
 
 
