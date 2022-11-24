@@ -29,15 +29,15 @@ public class RegistrationTest {
         $("#lastName").setValue(lastName);
         $("#userNumber").setValue("123456789");
         $("#userEmail").setValue("Andrey@mail.ru");
-        $("#currentAddress").setValue("Moscow");
+
        // $("#permanentAddress").setValue("Vladimirskaia");
        // $("#gender-radio-1").parent().click();
         $("#genterWrapper").$(byText("Other")).click();
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("August");
         $(".react-datepicker__year-select").selectOption("1983");
-        $(".react-datepicker__day--008").click();
-
+        $(".react-datepicker__day--030:not(.react-datepicker__day--outside-month)").click();
+        $("#currentAddress").setValue("Moscow");
 
 
         $("#submit").click();
