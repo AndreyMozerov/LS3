@@ -5,10 +5,13 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static jdk.javadoc.internal.doclets.toolkit.util.StandardDocFileFactory.newFile;
 
 public class RegistrationTest {
 
@@ -38,6 +41,16 @@ public class RegistrationTest {
         $(".react-datepicker__year-select").selectOption("1983");
         $(".react-datepicker__day--030:not(.react-datepicker__day--outside-month)").click();
         $("#currentAddress").setValue("Moscow");
+        $("#subjectsInput").setValue("HOOK").pressEnter();
+        $("#hobbiesWrapper").$(byText("Sports")).click();
+       // $("#uploadPicture").uploadFile(new File("src/test/resources/img/1"));
+        $("#uploadPicture").uploadFromClasspath("/img/1");
+        $("#state").click();
+        $("#stateCity-wrapper").$(byText("NCR")).click();
+       // $("#react-select-6-option-1").click();
+        $("#city").click();
+        $("#stateCity-wrapper").$(byText("Delphi")).click();
+        $("#submit").click();
 
 
         $("#submit").click();
