@@ -17,16 +17,16 @@ import static com.codeborne.selenide.Selenide.open;
 public class RegistrationTest {
 
     @BeforeAll
-    static void beforeAll(){
+    static void beforeAll() {
         Configuration.baseUrl = "http://demoqa.com";
         Configuration.holdBrowserOpen = true;
         Configuration.browserSize = "1920x1080";
-        }
+    }
 
     @Test
     void fillFormTest() {
-        String firstName="Andrey";
-        String lastName="Mozer";
+        String firstName = "Andrey";
+        String lastName = "Mozer";
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
         $("#firstName").setValue(firstName);
@@ -34,8 +34,7 @@ public class RegistrationTest {
         $("#userNumber").setValue("1234567890");
         $("#userEmail").setValue("Andrey@mail.ru");
 
-       // $("#permanentAddress").setValue("Vladimirskaia");
-       // $("#gender-radio-1").parent().click();
+        // $("#gender-radio-1").parent().click();
         $("#genterWrapper").$(byText("Other")).click();
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("August");
@@ -45,23 +44,18 @@ public class RegistrationTest {
         $("#subjectsInput").setValue("Maths").pressEnter();
         $("#hobbiesWrapper").$(byText("Sports")).click();
         $("#uploadPicture").uploadFile(new File("src/test/resources/img/2.png"));
-       // $("#uploadPicture").uploadFromClasspath("/img/2");
+        // $("#uploadPicture").uploadFromClasspath("/img/2");
         $("#state").click();
         $("#stateCity-wrapper").$(byText("NCR")).click();
-       // $("#react-select-6-option-1").click();
+        // $("#react-select-6-option-1").click();
         $("#city").click();
         $("#stateCity-wrapper").$(byText("Delhi")).click();
         $("#submit").click();
 
 
-        //$("#submit").click();
-
-
         $(".modal-dialog").should(appear);
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-        $(".table-responsive").shouldHave(text(firstName),text(lastName),
-                text("Andrey@mail.ru"),text("Moscow"));
-
+        $(".table-responsive").shouldHave(text(firstName), text(lastName), text("Andrey@mail.ru"), text("Moscow"));
 
 
     }
