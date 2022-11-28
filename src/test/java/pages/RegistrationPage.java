@@ -37,7 +37,7 @@ public class RegistrationPage {
     }
 
     public void setGender(String value){
-        $("#genterWrapper").$(byText(value)).click();.setValue(value);
+        $("#genterWrapper").$(byText(value)).click();
     }
 }
 
