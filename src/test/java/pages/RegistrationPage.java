@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
+import pages.components.RegistrationResultsModal;
 
 import java.util.Calendar;
 
@@ -12,6 +13,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class RegistrationPage {
     CalendarComponent calendarComponent= new CalendarComponent();
+    RegistrationResultsModal registrationResultsModal = new RegistrationResultsModal();
     private final String TITLE_TEXT="Student Registration Form";
     private SelenideElement
             firstNameInput = $("#firstName"),
@@ -51,6 +53,11 @@ public class RegistrationPage {
     public void setBirthDate(String day, String month, String year){
         userBirthDay.click();
         calendarComponent.setDate(day, month, year);
+    }
+
+    public void setVerifyModalAppears(){
+
+        registrationResultsModal.verifyModalAppears();
     }
 }
 

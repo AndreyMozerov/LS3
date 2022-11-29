@@ -41,8 +41,7 @@ public class RegistrationPageObjectsTest extends TestBase {
         $("#submit").click();
 
 
-        $(".modal-dialog").should(appear);
-        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+        registrationPage.setVerifyModalAppears();
         $(".table-responsive").shouldHave(text(firstName), text(lastName), text("Andrey@mail.ru"), text("1234567890"), text("Moscow"), text("Maths"), text("Sports"), text("Other"), text("NCR"), text("Delhi"));
 
 
