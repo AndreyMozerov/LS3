@@ -17,7 +17,8 @@ public class RegistrationPage {
             firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             userNumberInput = $("#userNumber"),
-            userEmailInput = $("#userEmail");
+            userEmailInput = $("#userEmail"),
+            userBirthDay = $("#dateOfBirthInput");
 
     public void openPage(){
         open("/automation-practice-form");
@@ -25,18 +26,22 @@ public class RegistrationPage {
     }
 
     public void setFirstName(String value){
+
         firstNameInput.setValue(value);
     }
 
     public void setLastName(String value){
+
         lastNameInput.setValue(value);
     }
 
     public void setUserNumber(String value){
+
         userNumberInput.setValue(value);
     }
 
     public void setUserEmail(String value){
+
         userEmailInput.setValue(value);
     }
 
@@ -44,8 +49,7 @@ public class RegistrationPage {
         $("#genterWrapper").$(byText(value)).click();
     }
     public void setBirthDate(String day, String month, String year){
-
-        $("#dateOfBirthInput").click();
+        userBirthDay.click();
         calendarComponent.setDate(day, month, year);
     }
 }

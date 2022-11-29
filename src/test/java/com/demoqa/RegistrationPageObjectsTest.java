@@ -25,7 +25,7 @@ public class RegistrationPageObjectsTest extends TestBase {
         registrationPage.setUserNumber(foneNumber);
         registrationPage.setUserEmail(Email);
         registrationPage.setGender("Other");
-        registrationPage.setBirthDate("30", "Augast", "2008");
+        registrationPage.setBirthDate("30", "August", "2008");
 
 
 
