@@ -4,6 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
 import pages.components.RegistrationResultsModal;
 
+import java.io.File;
 import java.util.Calendar;
 
 import static com.codeborne.selenide.Condition.text;
@@ -21,7 +22,7 @@ public class RegistrationPage<userAddress> {
             userNumberInput = $("#userNumber"),
             userEmailInput = $("#userEmail"),
             userBirthDay = $("#dateOfBirthInput");
-            userAddress = $("#currentAddress");
+
 
 
     public void openPage(){
@@ -68,10 +69,36 @@ public class RegistrationPage<userAddress> {
                 setValue("Maths").pressEnter();
     }
 
+    public void setJpg(String value){
+        $("#uploadPicture").uploadFile(new File("src/test/resources/img/2.png"));
+    }
+
     public void setAddress(String value){
 
-        userAddress.setValue(value);
+        $("#currentAddress").setValue(value);
     }
+
+
+
+
+
+    public void setState(String value){
+
+        $("#state").click();
+        $("#stateCity-wrapper").$(byText("NCR")).click();
+    }
+
+    public void setCity(String value){
+
+        $("#city").click();
+        $("#stateCity-wrapper").$(byText("Delhi")).click();
+    }
+
+    public void setSubmit(){
+
+        $("#submit").click();
+    }
+
     public void setVerifyModalAppears(){
 
         registrationResultsModal.verifyModalAppears();

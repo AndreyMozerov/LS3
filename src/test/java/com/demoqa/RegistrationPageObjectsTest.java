@@ -14,54 +14,66 @@ public class RegistrationPageObjectsTest extends TestBase {
 
     @Test
     void fillFormTest() {
-        String firstName = "Andrey";
-        String lastName = "Mozer";
-        String phoneNumber = "1234567890";
-        String Email = "Andrey@mail.ru";
-        String Gender = "Other";
-        String Hobbies = "Sports";
-        String Address = "Moscow";
+        String firstName = "Andrey",
+               lastName = "Mozer",
+               phoneNumber = "1234567890",
+               email = "Andrey@mail.ru",
+               gender = "Other",
+               day = "30",
+               month = "August",
+               year = "2000",
+               jpg = "src/test/resources/img/2.png",
+               hobbies = "Sports",
+               address = "Moscow",
+               subjects = "Maths",
+               state = "NCR",
+               city = "Delhi";
+
+
+
 
         registrationPage.openPage();
         registrationPage.setFirstName(firstName);
         registrationPage.setLastName(lastName);
         registrationPage.setUserNumber(phoneNumber);
-        registrationPage.setUserEmail(Email);
-        registrationPage.setGender(Gender);
-        registrationPage.setBirthDate("30", "August", "2008");
-        registrationPage.setHobbies(Hobbies);
-        registrationPage.setSubjects("Maths");
-        registrationPage.setAddress(Address);
+        registrationPage.setUserEmail(email);
+        registrationPage.setGender(gender);
+        registrationPage.setBirthDate(day, month, year);
+        registrationPage.setHobbies(hobbies);
+        registrationPage.setSubjects(subjects);
+        registrationPage.setAddress(address);
+        registrationPage.setJpg(jpg);
+        registrationPage.setState(state);
+        registrationPage.setCity(city);
+        registrationPage.setSubmit();
 
 
 
 
-        //$("#currentAddress").setValue(userAddress);
         //$("#subjectsInput").setValue("Maths").pressEnter();
         //$("#hobbiesWrapper").$(byText("Sports")).click();
         $("#uploadPicture").uploadFile(new File("src/test/resources/img/2.png"));
-        $("#state").click();
-        $("#stateCity-wrapper").$(byText("NCR")).click();
-        $("#city").click();
-        $("#stateCity-wrapper").$(byText("Delhi")).click();
-        $("#submit").click();
+       // $("#state").click();
+       // $("#stateCity-wrapper").$(byText("NCR")).click();
+       // $("#city").click();
+       // $("#stateCity-wrapper").$(byText("Delhi")).click();
+       // $("#submit").click();
 
 
         registrationPage.setVerifyModalAppears();
         registrationPage.setVerifyResult("Student Name",firstName+lastName);
-        registrationPage.setVerifyResult("Student Email",Email);
-        registrationPage.setVerifyResult("Gender",Gender);
+        registrationPage.setVerifyResult("Student Email",email);
+        registrationPage.setVerifyResult("Gender",gender);
         registrationPage.setVerifyResult("Mobile",phoneNumber);
-        registrationPage.setVerifyResult("Date of Birth","30 August,2008");
-        registrationPage.setVerifyResult("Subjects","Maths");
-        registrationPage.setVerifyResult("Hobbies",Hobbies);
-        registrationPage.setVerifyResult("Address",Address);
+        registrationPage.setVerifyResult("Date of Birth",day + " " + month + "," + year);
+        registrationPage.setVerifyResult("Subjects",subjects);
+        registrationPage.setVerifyResult("Hobbies",hobbies);
+        registrationPage.setVerifyResult("Picture",jpg.substring(5));
+        registrationPage.setVerifyResult("Address",address);
+        registrationPage.setVerifyResult("State and City",state + " " + city);
 
 
-        $(".table-responsive").shouldHave(text(firstName), text(lastName),
-                text("Andrey@mail.ru"), text("1234567890"), text("Moscow"),
-                text("Maths"), text("Sports"), text("Other"), text("NCR"),
-                text("Delhi"));
+
 
 
     }
