@@ -60,8 +60,7 @@ public class RegistrationPage<userAddress> {
     }
 
     public void setHobbies(String value){
-        $("#hobbiesWrapperr").
-                $(byText(value)).click();
+        $("#hobbiesWrapper").$(byText(value)).click();
     }
 
     public void setSubjects(String value){
