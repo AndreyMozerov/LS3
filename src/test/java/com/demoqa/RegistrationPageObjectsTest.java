@@ -41,7 +41,15 @@ public class RegistrationPageObjectsTest extends TestBase {
         $("#submit").click();
 
 
-        registrationPage.setVerifyModalAppears();
+        registrationPage.setVerifyModalAppears()
+                .verifyResult("Student Name",firstName+lastName)
+                .verifyResult("Student Name",firstName+lastName)
+                .verifyResult("Student Name",firstName+lastName)
+                .verifyResult("Student Name",firstName+lastName)
+                .verifyResult("Student Name",firstName+lastName)
+                .verifyResult("Student Name",firstName+lastName);
+
+
         $(".table-responsive").shouldHave(text(firstName), text(lastName), text("Andrey@mail.ru"), text("1234567890"), text("Moscow"), text("Maths"), text("Sports"), text("Other"), text("NCR"), text("Delhi"));
 
 

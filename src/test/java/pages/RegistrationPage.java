@@ -48,7 +48,8 @@ public class RegistrationPage {
     }
 
     public void setGender(String value){
-        $("#genterWrapper").$(byText(value)).click();
+        $("#genterWrapper").
+                $(byText(value)).click();
     }
     public void setBirthDate(String day, String month, String year){
         userBirthDay.click();
@@ -58,6 +59,11 @@ public class RegistrationPage {
     public void setVerifyModalAppears(){
 
         registrationResultsModal.verifyModalAppears();
+    }
+
+    public void setVerifyResult(String key, String value){
+
+        registrationResultsModal.verifyResult(key, value);
     }
 }
 
