@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class RegistrationPage {
+public class RegistrationPage<userAddress> {
     CalendarComponent calendarComponent= new CalendarComponent();
     RegistrationResultsModal registrationResultsModal = new RegistrationResultsModal();
     private final String TITLE_TEXT="Student Registration Form";
@@ -21,6 +21,8 @@ public class RegistrationPage {
             userNumberInput = $("#userNumber"),
             userEmailInput = $("#userEmail"),
             userBirthDay = $("#dateOfBirthInput");
+            userAddress = $("#currentAddress");
+
 
     public void openPage(){
         open("/automation-practice-form");
@@ -56,6 +58,20 @@ public class RegistrationPage {
         calendarComponent.setDate(day, month, year);
     }
 
+    public void setHobbies(String value){
+        $("#hobbiesWrapperr").
+                $(byText(value)).click();
+    }
+
+    public void setSubjects(String value){
+        $("#subjectsInput").
+                setValue("Maths").pressEnter();
+    }
+
+    public void setAddress(String value){
+
+        userAddress.setValue(value);
+    }
     public void setVerifyModalAppears(){
 
         registrationResultsModal.verifyModalAppears();
