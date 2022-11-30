@@ -30,8 +30,6 @@ public class RegistrationPageObjectsTest extends TestBase {
                city = "Delhi";
 
 
-
-
         registrationPage.openPage();
         registrationPage.setFirstName(firstName);
         registrationPage.setLastName(lastName);
@@ -46,18 +44,6 @@ public class RegistrationPageObjectsTest extends TestBase {
         registrationPage.setState(state);
         registrationPage.setCity(city);
         registrationPage.setSubmit();
-
-
-
-
-        //$("#subjectsInput").setValue("Maths").pressEnter();
-        //$("#hobbiesWrapper").$(byText("Sports")).click();
-        $("#uploadPicture").uploadFile(new File("src/test/resources/img/2.png"));
-       // $("#state").click();
-       // $("#stateCity-wrapper").$(byText("NCR")).click();
-       // $("#city").click();
-       // $("#stateCity-wrapper").$(byText("Delhi")).click();
-       // $("#submit").click();
 
 
         registrationPage.setVerifyModalAppears();
