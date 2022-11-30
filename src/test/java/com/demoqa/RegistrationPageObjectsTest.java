@@ -16,15 +16,16 @@ public class RegistrationPageObjectsTest extends TestBase {
     void fillFormTest() {
         String firstName = "Andrey";
         String lastName = "Mozer";
-        String foneNumber = "1234567890";
+        String phoneNumber = "1234567890";
         String Email = "Andrey@mail.ru";
+        String Gender = "Other";
 
         registrationPage.openPage();
         registrationPage.setFirstName(firstName);
         registrationPage.setLastName(lastName);
-        registrationPage.setUserNumber(foneNumber);
+        registrationPage.setUserNumber(phoneNumber);
         registrationPage.setUserEmail(Email);
-        registrationPage.setGender("Other");
+        registrationPage.setGender(Gender);
         registrationPage.setBirthDate("30", "August", "2008");
 
 
@@ -43,10 +44,10 @@ public class RegistrationPageObjectsTest extends TestBase {
 
         registrationPage.setVerifyModalAppears();
         registrationPage.setVerifyResult("Student Name",firstName+lastName);
-        registrationPage.setVerifyResult("Student Name",firstName+lastName);
-        registrationPage.setVerifyResult("Student Name",firstName+lastName);
-        registrationPage.setVerifyResult("Student Name",firstName+lastName);
-        registrationPage.setVerifyResult("Student Name",firstName+lastName);
+        registrationPage.setVerifyResult("Student Email",Email);
+        registrationPage.setVerifyResult("Gender",Gender);
+        registrationPage.setVerifyResult("Mobile",phoneNumber);
+        registrationPage.setVerifyResult("Date of Birth","30 August,2008");
         registrationPage.setVerifyResult("Student Name",firstName+lastName);
         registrationPage.setVerifyResult("Student Name",firstName+lastName);
 
