@@ -78,10 +78,6 @@ public class RegistrationPage<userAddress> {
         $("#currentAddress").setValue(value);
     }
 
-
-
-
-
     public void setState(String value){
 
         $("#state").click();

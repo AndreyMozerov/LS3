@@ -29,7 +29,6 @@ public class RegistrationPageObjectsTest extends TestBase {
                state = "NCR",
                city = "Delhi";
 
-
         registrationPage.openPage();
         registrationPage.setFirstName(firstName);
         registrationPage.setLastName(lastName);
@@ -45,7 +44,6 @@ public class RegistrationPageObjectsTest extends TestBase {
         registrationPage.setCity(city);
         registrationPage.setSubmit();
 
-
         registrationPage.setVerifyModalAppears();
         registrationPage.setVerifyResult("Student Name",firstName+lastName);
         registrationPage.setVerifyResult("Student Email",email);
@@ -54,13 +52,8 @@ public class RegistrationPageObjectsTest extends TestBase {
         registrationPage.setVerifyResult("Date of Birth",day + " " + month + "," + year);
         registrationPage.setVerifyResult("Subjects",subjects);
         registrationPage.setVerifyResult("Hobbies",hobbies);
-        registrationPage.setVerifyResult("Picture",jpg.substring(5));
+        registrationPage.setVerifyResult("Picture",jpg);
         registrationPage.setVerifyResult("Address",address);
         registrationPage.setVerifyResult("State and City",state + " " + city);
-
-
-
-
-
     }
 }
