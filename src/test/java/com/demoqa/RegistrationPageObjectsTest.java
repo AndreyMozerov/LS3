@@ -22,7 +22,7 @@ public class RegistrationPageObjectsTest extends TestBase {
                day = "30",
                month = "August",
                year = "2000",
-               jpg = "src/test/resources/img/2.png",
+               jpg = "2.png",
                hobbies = "Sports",
                address = "Moscow",
                subjects = "Maths",
@@ -37,15 +37,15 @@ public class RegistrationPageObjectsTest extends TestBase {
         registrationPage.setGender(gender);
         registrationPage.setBirthDate(day, month, year);
         registrationPage.setHobbies(hobbies);
-        registrationPage.setSubjects(subjects);
+        registrationPage.setSubjects("Maths");
         registrationPage.setAddress(address);
-        registrationPage.setJpg(jpg);
-        registrationPage.setState(state);
-        registrationPage.setCity(city);
+        registrationPage.setJpg("2.png");
+        registrationPage.setState("NCR");
+        registrationPage.setCity("Delhi");
         registrationPage.setSubmit();
 
         registrationPage.setVerifyModalAppears();
-        registrationPage.setVerifyResult("Student Name",firstName+lastName);
+        registrationPage.setVerifyResult("Student Name",firstName+" "+lastName);
         registrationPage.setVerifyResult("Student Email",email);
         registrationPage.setVerifyResult("Gender",gender);
         registrationPage.setVerifyResult("Mobile",phoneNumber);

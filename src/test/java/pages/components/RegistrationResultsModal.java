@@ -1,5 +1,7 @@
 package pages.components;
 
+import com.codeborne.selenide.SelenideElement;
+
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -13,7 +15,7 @@ public class RegistrationResultsModal {
     }
 
     public void verifyResult(String key, String value){
-        $(".Table-responsive").$(byText(key)).parent()
+        $(".table-responsive").$(byText(key)).parent()
                 .shouldHave(text(value));
     }
 }
