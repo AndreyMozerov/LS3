@@ -37,11 +37,11 @@ public class RegistrationPageObjectsTest extends TestBase {
         registrationPage.setGender(gender);
         registrationPage.setBirthDate(day, month, year);
         registrationPage.setHobbies(hobbies);
-        registrationPage.setSubjects("Maths");
+        registrationPage.setSubjects(subjects);
         registrationPage.setAddress(address);
-        registrationPage.setJpg("2.png");
-        registrationPage.setState("NCR");
-        registrationPage.setCity("Delhi");
+        registrationPage.setJpg(jpg);
+        registrationPage.setState(state);
+        registrationPage.setCity(city);
         registrationPage.setSubmit();
 
         registrationPage.setVerifyModalAppears();

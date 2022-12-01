@@ -65,7 +65,7 @@ public class RegistrationPage<userAddress> {
 
     public void setSubjects(String value){
         $("#subjectsInput").
-                setValue("Maths").pressEnter();
+                setValue(value).pressEnter();
     }
 
     public void setJpg(String value){
@@ -80,13 +80,13 @@ public class RegistrationPage<userAddress> {
     public void setState(String value){
 
         $("#state").click();
-        $("#stateCity-wrapper").$(byText("NCR")).click();
+        $("#stateCity-wrapper").$(byText(value)).click();
     }
 
     public void setCity(String value){
 
         $("#city").click();
-        $("#stateCity-wrapper").$(byText("Delhi")).click();
+        $("#stateCity-wrapper").$(byText(value)).click();
     }
 
     public void setSubmit(){
