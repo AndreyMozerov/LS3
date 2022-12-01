@@ -69,7 +69,7 @@ public class RegistrationPage<userAddress> {
     }
 
     public void setJpg(String value){
-        $("#uploadPicture").uploadFile(new File("src/test/resources/img/2.png"));
+        $("#uploadPicture").uploadFile(new File("src/test/resources/img/"+value));
     }
 
     public void setAddress(String value){
