@@ -25,7 +25,7 @@ public class TestBase {
             gender = "Other",
             day = String.valueOf(fakerEng.number().numberBetween(1, 30)),
             month = "August",
-            year = String.valueOf(fakerEng.number().numberBetween(1900, 2020)),
+            year = String.valueOf(fakerEng.number().numberBetween(1900, 2000)),
             jpg = "2.png",
             hobbies = "Sports",
             address = fakerRu.address().streetAddress()+", "+fakerRu.address().buildingNumber(),
